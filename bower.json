@@ -1,0 +1,30 @@
+{
+  "name": "angularjs-typeahead-dropdown",
+  "version": "1.0.3",
+  "authors": [
+    "Andrew Gray <andrew.paul.gray@gmail.com>"
+  ],
+  "description": "AngularJS Typeahead Dropdown directive",
+  "keywords": ["angular", "angularjs", "directive", "typeahead", "dropdown", "checklist", "list", "bootstrap"],
+  "license": "MIT",
+  "main": "src/angularjs-typeahead-dropdown.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.0"
+  },
+  "devDependencies": {
+    "angular": "~1.2.0",
+    "angular-animate": "~1.2.0",
+    "angular-sanitize": "~1.2.0",
+    "angular-touch": "~1.2.0",
+    "angular-route": "~1.2.0",
+    "bootstrap": "~3.1.1",
+    "angular-highlightjs": "~0.2.7"
+  }
+}
