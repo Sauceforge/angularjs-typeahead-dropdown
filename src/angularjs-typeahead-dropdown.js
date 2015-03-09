@@ -48,7 +48,7 @@ angular.module("typeaheadDropdown.tpl", [])
                                 a.mdl = [];
                             }
                             angular.extend(a.mdl, i);
-                            a.mdl = i[a.config.optionLabel];
+                            a.mdl = i;
                             if (a.events !== undefined) {
                                 a.events.onItemSelect(i);
                             }
