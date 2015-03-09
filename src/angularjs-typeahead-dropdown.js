@@ -29,7 +29,8 @@ angular.module("typeaheadDropdown.tpl", [])
             return {
                 templateUrl: "templates/typeaheadDropdown.tpl.html",
                 scope: { model: "=ngModel", options: "=",  config: "=?", events: "=", required: "=?ngRequired" },
-                replace: !0,
+                require: "ngModel",
+                replace: true,
                 link: function($scope, $element, $attrs) {
                     $scope.externalEvents = {
                         onItemSelect: angular.noop
