@@ -1,0 +1,159 @@
+<div class="container" ng-controller="ExampleCtrl">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 style="margin-bottom: 0">What is AngularJS Typeahead Dropdown?</h2>
+            This directive uses Bootstrap's Dropdown with the power of AngularJS directives and binding.
+            <br />
+            <br />In this page you can see basic and advanced usage examples.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 style="margin-bottom: 0">Download</h2>
+            There are several options to do that:
+            <ol>
+                <li>Using bower: `bower install angularjs-typeahead-dropdown`</li>
+                <li>Download the .zip file from <a href="https://github.com/full360solutions/angularjs-typeahead-dropdown/zipball/master">here</a></li>
+                <li>Using it from GitHub raw using <a href="https://rawgit.com/full360solutions/angularjs-typeahead-dropdown/master/src/angularjs-typeahead-dropdown.js">this link</a></li>
+            </ol>
+        </div>
+    </div>
+    <accordion close-others="true">
+        <accordion-group heading="Basic Usage Example" is-open="true">
+			<div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <h3>Demo</h3>
+                    <div class="well">
+                        <div>
+							<typeahead-dropdown id="ex1" ng-model="ex1model" options="ex1data" config="ex1config"></typeahead-dropdown>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <h3>The model:</h3>
+                    <pre>{{ex1model|json}}</pre>
+                </div>
+            </div>
+			
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Code</h3>
+                    <div class="well">
+<div hljs>
+	// HTML
+	<typeahead-dropdown id="ex1" ng-model="ex1model" options="ex1data" config="ex1config"></typeahead-dropdown>
+
+	// JavaScript 
+	$scope.ex1model = []; 
+	$scope.ex1data = [ {id: 1, label: "Tony"}, 
+			   {id: 2, label: "Larita"}, 
+			   {id: 3, label: "Brian"}, 
+			   {id: 4, label: "Andrew"}, 
+			   {id: 5, label: "Bruno"}, 
+			   {id: 6, label: "Adrian"}, 
+			   {id: 7, label: "Stuart"}, 
+			   {id: 8, label: "Stephen"}, 
+			   {id: 9, label: "Peter"},
+			   {id: 10, label: "Alexander"}];
+	$scope.ex1config = { modelLabel: "id", optionLabel: "label" };
+</div>
+                    </div>
+                </div>
+            </div>
+        </accordion-group>
+		
+		<accordion-group heading="External Events Example">
+			<div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <h3>Demo</h3>
+                    <div class="well">
+                        <div>
+							<typeahead-dropdown id="ex2" ng-model="ex2model" options="ex2data" config="ex2config" events="ex2events"></typeahead-dropdown>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <h3>The model:</h3>
+                    <pre>{{ex2model|json}}</pre>
+                </div>
+            </div>
+			
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Code</h3>
+                    <div class="well">
+<div hljs>
+	// HTML
+	<typeahead-dropdown id="ex2" ng-model="ex2model" options="ex2data" config="ex2config" events="ex2events"></typeahead-dropdown>
+
+	// JavaScript 
+	$scope.ex2model = []; 
+	$scope.ex2data = [ {id: 1, label: "Tony"}, 
+			   {id: 2, label: "Larita"}, 
+			   {id: 3, label: "Brian"}, 
+			   {id: 4, label: "Andrew"}, 
+			   {id: 5, label: "Bruno"}, 
+			   {id: 6, label: "Adrian"}, 
+			   {id: 7, label: "Stuart"}, 
+			   {id: 8, label: "Stephen"}, 
+			   {id: 9, label: "Peter"},
+			   {id: 10, label: "Alexander"}];
+	$scope.ex2config = { modelLabel: "id", optionLabel: "label" };
+	$scope.ex2events = { onItemSelect: function($item) { alert("The model is now: " + angular.toJson($item)) } };
+</div>
+                    </div>
+                </div>
+            </div>
+        </accordion-group>		
+    </accordion>
+    <h1>Full API Documentation</h1>
+    <h2>Attributes</h2>
+    <p>List of allowed attributes, you can find more information about them in the usage examples above.</p>
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>Attribute Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+			<tr>
+                <td><strong>config</strong>
+                </td>
+                <td>Object</td>
+                <td>The config that defines content of the model.</td>
+            </tr>
+            <tr>
+                <td><strong>options</strong>
+                </td>
+                <td>Object / Array</td>
+                <td>The options for the dropdown.</td>
+            </tr>
+            <tr>
+                <td><strong>events</strong>
+                </td>
+                <td>Object</td>
+                <td>Events callbacks, more information below.</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Events</h2>
+    <p>Available event callbacks what the directive fires. These callbacks are set with "events" attribute.</p>
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Parameters</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>onItemSelect</td>
+                <td>item</td>
+                <td>Fired when selecting an item.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
