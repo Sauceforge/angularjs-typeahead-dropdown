@@ -7,7 +7,7 @@ angular.module("typeaheadDropdown.tpl", [])
                     //"<div ng-if=!options>Loading options...</div>" +
                     "<div ng-if=options class=dropdown dropdown>" +
                     "<div class=input-group>" +
-                    "<input class=form-control placeholder=\"Select or type...\" ng-model=model[config.modelLabel] typeahead=\"op[config.optionLabel] for op in options | filter:$viewValue\" typeahead-editable=false typeahead-on-select=\"onSelect($item, $model, $label)\" ng-required=\"required\"> " +
+                    "<input class=form-control placeholder=\"Select or type...\" ng-model=mdl typeahead=\"op[config.optionLabel] for op in options | filter:$viewValue\" typeahead-editable=false typeahead-on-select=\"onSelect($item, $model, $label)\" ng-required=\"required\"> " +
                     "<span class=input-group-btn>" +
                     "<button class=\"btn btn-default dropdown-toggle\" dropdown-toggle>" +
                     "<span class=caret>" +
@@ -28,7 +28,7 @@ angular.module("typeaheadDropdown.tpl", [])
         .directive("typeaheadDropdown", function() {
             return {
                 templateUrl: "templates/typeaheadDropdown.tpl.html",
-                scope: { model: "=ngModel", options: "=",  config: "=?", events: "=", required: "=?ngRequired" },
+                scope: { mdl: "=ngModel", options: "=",  config: "=?", events: "=", required: "=?ngRequired" },
                 require: "ngModel",
                 replace: true,
                 link: function($scope, $element, $attrs) {
@@ -44,11 +44,11 @@ angular.module("typeaheadDropdown.tpl", [])
                         a.config = angular.extend({ modelLabel: "name", optionLabel: "name" }, a.config),
 
                         a.onSelect = function (i) {
-                            if (a.model === undefined) {
-                                a.model = [];
+                            if (a.mdl === undefined) {
+                                a.mdl = [];
                             }
-                            angular.extend(a.model, i);
-                            a.model[a.config.modelLabel] = i[a.config.optionLabel];
+                            angular.extend(a.mdl, i);
+                            a.mdl[a.config.modelLabel] = i[a.config.optionLabel];
                             if (a.events !== undefined) {
                                 a.events.onItemSelect(i);
                             }
