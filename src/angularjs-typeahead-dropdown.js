@@ -39,12 +39,7 @@ angular.module("typeaheadDropdown.tpl", [])
 
                 controller: ["$scope",
                     function (a) {
-                        //a.config = angular.extend({ modelLabel: "name", optionLabel: "name" }, a.config),
                         a.onSelect = function (i) {
-                            //if (a.mdl === undefined) {
-                            //    a.mdl = [];
-                            //}
-                            //angular.extend(a.mdl, i);
                             a.mdl = i;
                             if (a.events !== undefined) {
                                 a.events.onItemSelect(i);
