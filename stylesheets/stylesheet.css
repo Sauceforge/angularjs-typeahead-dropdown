@@ -44,13 +44,13 @@ a {
     color: #2879d0;
 }
 a:hover {
-    color: #2268b2;
+    color: #df6c4f;
 }
 header {
     padding-top: 40px;
     padding-bottom: 40px;
     font-family:'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-    background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
+    background: #000000  0 0 repeat-x;
     border-bottom: solid 1px #275da1;
 }
 header h1 {
@@ -63,7 +63,7 @@ header h1 {
 }
 header h2 {
     font-size: 26px;
-    color: #9ddcff;
+    color: #df6c4f;
     font-weight: normal;
     line-height: 1.3;
     width: 540px;
@@ -101,15 +101,16 @@ aside#sidebar p.repo-owner, aside#sidebar p.repo-owner a {
     margin-bottom: 40px;
 }
 a.gh-button {
-    width: 134px;
-    height: 58px;
+    width: 150px;
+    height: 75px;
     line-height: 1.2;
-    font-size: 23px;
+    font-size: 16px;
     color: #fff;
     padding-left: 68px;
-    padding-top: 22px;
+    padding-top: 15px;
     font-family:'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
 }
+
 a.gh-button small {
     display: block;
     font-size: 11px;
@@ -118,8 +119,15 @@ header a.gh-button {
     position: absolute;
     right: 0;
     top: 0;
-    background: transparent url(../images/github-button.png) 0 0 no-repeat;
+    background:  url(../images/github-button.png) 0 0 no-repeat;
+	background-color: #000000;
+	border-color: #ddd;
 }
+
+header a.gh-button:hover {
+    background-color: #df6c4f;
+}
+
 aside a.gh-button {
     width: 138px;
     padding-left: 64px;
@@ -293,7 +301,7 @@ footer a {
     color: #666;
 }
 footer a:hover {
-    color: #444;
+    color: #df6c4f;
 }
 /* MISC */
  .clearfix:after {
@@ -420,37 +428,3 @@ padding-left: 0px;
 margin-right: auto;
 margin-left: auto;
 }
-
-/*
-@media (max-width: 768px) {
-    .container-fluid > .navbar-collapse {
-        margin: 0;
-      }
-
-    div#menu {
-        padding: 0;
-        overflow:hidden;
-    }
-}
-#menu2 {
-        margin-left:0px;
-        margin-top:50px;
-        height:500px;
-        padding:0
-    }
-	
-	
-.fixTop {
-      position: fixed;
-      top: 0;
-      z-index:100;
-      width:100%
-    }
-
-@media (max-width: 468px) {
-
-    .search-menu {
-    width:100%
-    }
-}
-*/
