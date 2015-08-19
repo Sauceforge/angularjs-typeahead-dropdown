@@ -7,9 +7,9 @@ angular.module("typeaheadDropdown.tpl", [])
                     //"<div ng-if=!options>Loading options...</div>" +
                     "    <div ng-if=options class=dropdown dropdown>" +
                     "        <div class=input-group>" +
-                    "            <input class=form-control placeholder=\"Select or type...\" ng-model=mdl typeahead=\"op[config.optionLabel] for op in options | filter:$viewValue\" typeahead-editable=false typeahead-on-select=\"onSelect($item, $model, $label)\" ng-required=\"required\"> " +
+                    "            <input class=form-control placeholder=\"Select or type...\" ng-model=mdl typeahead=\"op[config.optionLabel] for op in options | filter:$viewValue\" typeahead-editable=false typeahead-on-select=\"onSelect($item, $model, $label)\" ng-required=\"required\" ng-disabled=\"disabled\"> " +
                     "            <span class=input-group-btn>" +
-                    "                <button class=\"btn btn-default dropdown-toggle\" dropdown-toggle>" +
+                    "                <button class=\"btn btn-default dropdown-toggle\" dropdown-toggle ng-disabled=\"disabled\">" +
                     "                    <span class=caret></span>" +
                     "                </button>" +
                     "            </span>" +
@@ -27,7 +27,7 @@ angular.module("typeaheadDropdown.tpl", [])
         .directive("typeaheadDropdown", function() {
             return {
                 templateUrl: "templates/typeaheadDropdown.tpl.html",
-                scope: { mdl: "=ngModel", options: "=",  config: "=?", events: "=", required: "=?ngRequired" },
+                scope: { mdl: "=ngModel", options: "=",  config: "=?", events: "=", required: "=?ngRequired", disabled: "=?ngDisabled" },
                 require: "ngModel",
                 replace: true,
                 link: function($scope, $element, $attrs) {
@@ -36,7 +36,7 @@ angular.module("typeaheadDropdown.tpl", [])
                     };
                     angular.extend($scope.externalEvents, $scope.events || []);
                 },
-
+	
                 controller: ["$scope",
                     function (a) {
                         a.onSelect = function (i) {
