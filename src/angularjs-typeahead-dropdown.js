@@ -40,7 +40,7 @@ angular.module("typeaheadDropdown.tpl", [])
                 controller: ["$scope",
                     function (a) {
                         a.onSelect = function (i) {
-                            a.mdl = i;
+                            a.mdl = angular.copy(i);
                             if (a.events !== undefined) {
                                 a.events.onItemSelect(i);
                             }
